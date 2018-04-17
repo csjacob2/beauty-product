@@ -1,0 +1,184 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: "MarkWeb";
+  color: #000;
+  font-size: 16px;
+  height: 100%;
+  margin: 0;
+}
+body a {
+  color: #808080;
+}
+body a:hover,
+body a:active {
+  color: #dcddde;
+  text-decoration: none;
+}
+body button {
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #000;
+  padding: 5px 10px;
+  border: 1px solid transparent;
+}
+body button:hover,
+body button:active {
+  color: #000;
+  background-color: #fff;
+  border: 1px solid #000;
+}
+body header {
+  height: 60px;
+  width: 100%;
+  background-color: black;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 10px 0 0 10px;
+  position: fixed;
+  top: 0;
+  z-index: 10;
+}
+body header .logo {
+  background: transparent url('../assets/logo_desktop_2x.png') no-repeat;
+  width: 350px;
+  height: -webkit-fill-available;
+  display: flex;
+}
+body header .brand-name {
+  color: #fff;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+body .hero {
+  background: transparent url('../assets/hero_desktop_1x.jpg') no-repeat center;
+  background-size: cover;
+  height: -webkit-fill-available;
+  max-height: 350px;
+  position: relative;
+  margin-top: 60px;
+}
+body .hero .product-name {
+  font-size: 72px;
+  color: #f0725d;
+  font-family: "CanelaWeb";
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  background-color: #f2f2f2;
+  white-space: nowrap;
+  position: absolute;
+  padding: 10px;
+}
+body main {
+  padding: 40px 80px 0 80px;
+}
+body main .product-name {
+  font-family: "CanelaWeb";
+  font-size: 30px;
+}
+body main .variants {
+  display: flex;
+  flex-flow: column;
+}
+body main .variants .variant {
+  flex-flow: row;
+  display: flex;
+}
+body main .variants .variant:nth-child(2n+1) {
+  flex-direction: row-reverse;
+}
+body main .variants .variant .info-block {
+  width: 40%;
+  padding: 20px;
+}
+body main .variants .variant .info-block .name {
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 18px;
+}
+body main .variants .variant .info-block .name .desc-s {
+  color: #808080;
+  font-size: 16px;
+}
+body main .variants .variant .info-block .desc {
+  line-height: 20px;
+}
+body main .variants .variant .info-block .price {
+  font-weight: bold;
+}
+body main .variants .variant .image-block {
+  width: 60%;
+  padding: 20px;
+}
+body main .variants .variant .image-block img {
+  width: 100%;
+}
+body footer {
+  padding: 0 80px 20px 80px;
+}
+body footer .headline {
+  font-size: 48px;
+  font-family: "CanelaWeb";
+}
+body footer section {
+  display: table-cell;
+  width: 33%;
+  position: relative;
+  padding: 20px;
+}
+body footer section:after {
+  content: '';
+  height: 80%;
+  width: 1px;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #fad3cc;
+}
+body footer section:last-child:after {
+  width: 0;
+  background-color: transparent;
+}
+body footer section h2 {
+  font-size: 21px;
+  font-weight: bold;
+}
+body footer section .contact {
+  padding-top: 20px;
+}
+body footer section .contact span {
+  display: block;
+}
+body footer section .contact span.label {
+  display: inline;
+}
+/* Sans-Serif Regular */
+@font-face {
+  font-family: 'MarkWeb';
+  src: url('//d2k21z21l53iby.cloudfront.net/webfont3/MarkWeb.eot');
+  src: url('//d2k21z21l53iby.cloudfront.net/webfont3/MarkWeb.eot?#iefix') format('embedded-opentype'), url('//d2k21z21l53iby.cloudfront.net/webfont3/MarkWeb.woff') format('woff'), url('//d2k21z21l53iby.cloudfront.net/webfont3/MarkWeb.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+/* Sans-Serif Bold */
+@font-face {
+  font-family: 'MarkWeb';
+  src: url('//d2k21z21l53iby.cloudfront.net/webfont3/MarkWebBold.eot');
+  src: url('//d2k21z21l53iby.cloudfront.net/webfont3/MarkWebBold.eot?#iefix') format('embedded-opentype'), url('//d2k21z21l53iby.cloudfront.net/webfont3/MarkWebBold.woff') format('woff'), url('//d2k21z21l53iby.cloudfront.net/webfont3/MarkWebBold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+/* Serif Regular */
+@font-face {
+  font-family: 'CanelaWeb';
+  src: url('//d2k21z21l53iby.cloudfront.net/webfont3/Canela-Medium-Web.eot');
+  src: url('//d2k21z21l53iby.cloudfront.net/webfont3/Canela-Medium-Web.eot?#iefix') format('embedded-opentype'), url('//d2k21z21l53iby.cloudfront.net/webfont3/Canela-Medium-Web.woff2') format('woff2'), url('//d2k21z21l53iby.cloudfront.net/webfont3/Canela-Medium-Web.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+}

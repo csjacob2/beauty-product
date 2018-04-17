@@ -1,0 +1,2 @@
+<a href="http://www.beautylish.com"><div class="logo"></div></a>
+<h2 class="brand-name"><a href="{{brand.url}}">{{brand.name}}</a></h2>

@@ -1,0 +1,19 @@
+<h1 class="headline">{{headline}}</h1>
+
+<section class="s1">
+    <h2>{{subhead_1}}</h2>
+    {{copy_1}}
+</section>
+
+<section class="s2">
+    <h2>{{subhead_2}}</h2>
+    {{copy_2}}
+</section>
+
+<section class="s3">
+    <h2>{{subhead_3}}</h2>
+    {{copy_3}}
+
+    <div class="contact">
+    </div>
+</section>

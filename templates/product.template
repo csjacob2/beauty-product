@@ -1,0 +1,26 @@
+<p class="brand-name">{{brand.name}}</p>
+
+<p class="product-name" id="cid-{{product.cid}}">{{product.name}}</p>
+<p class="product-desc">{{product.description}}</p>
+
+<div class="variants">
+    {{#each variants}}
+
+        <div class="variant" id="cid-{{cid}}">
+            <div class="info-block">
+                <p class="name">{{name}}<br/>
+                <span class="desc-s">{{short_description}}</span></p>
+
+                <p class="desc">{{description}}</p>
+                <p class="size">{{size}}</p>
+                <p class="price">{{price}}</p>
+
+                <button id="add-to-bag">Add to Bag</button>
+            </div>
+            <div class="image-block">
+                <img src="{{image}}">
+            </div>
+        </div>
+
+    {{/each}}
+</div>

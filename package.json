@@ -1,0 +1,16 @@
+{
+  "name": "beautylish",
+  "version": "1.0.0",
+  "description": "Beautylish front end code challenge",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Cassandra S. Jacobs",
+  "license": "ISC",
+  "dependencies": {
+    "grunt": "^1.0.2",
+    "grunt-contrib-less": "^1.4.1",
+    "grunt-contrib-watch": "^1.0.0"
+  }
+}

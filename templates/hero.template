@@ -1,0 +1,3 @@
+<div class="hero">
+    <span class="product-name">{{product.name}}</span>
+</div>
