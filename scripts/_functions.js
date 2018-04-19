@@ -1,14 +1,9 @@
 $(document).ready(function() {
     product.getProduct();
 
-
     store.getHeader();
     store.getFooter();
-
 });
-
-
-
 
 
 var product = (function() {
@@ -17,21 +12,93 @@ var product = (function() {
         // get json data from file
         $.getJSON('../data/data.json', function(productData) {
 
-            //use handlebar template to format and populate product page with product data
-            $.get('../templates/product.template', function (source) {
-                var productTemplate = Handlebars.compile(source);
-                var product = productTemplate(productData);
+            //load products to page, once they're up there, attach click handlers and poppers
+            new Promise(function (resolve, reject) {
+                //use handlebar template to format and populate product page with product data
+                $.get('../templates/product.template', function (source) {
+                    var productTemplate = Handlebars.compile(source);
+                    var product = productTemplate(productData);
 
-                $('main').append(product);
-
+                    $('main').append(product);
+                    resolve();
+                });
+            })
+            .then(function() {
+                attachClickHandlers();
             });
+        });
+    }
+
+    function attachClickHandlers() {
+        //attach handler to "add to bag" button to control adding product to bag
+        $('button.add-to-bag').click(addToBag);
+    }
+
+    function addToBag() {
+        // get the cid of the product
+        // (this could technically work for both products with and without variants)
+        var cid = $(this).closest('[id]').data('productcid');
+        var url = 'https://www.beautylish.com/rest/interview-variant';
+
+        $.ajax({
+            url: url,
+            method: 'POST',
+            dataType: 'json',
+            data: {cid: cid},
+            beforeSend: function(){
+                $('#cid-' + cid + ' .add-to-bag').html('Adding....');
+            }
+        }).done(function(data) {
+            //show popover if successful
+            getPopover(data);
+        }).fail(function(error){
+            console.log(error);
+        });
+    }
+
+
+    function getPopover(data) {
+        // attach popovers to button with json data
+
+        $.getJSON('../data/data.json', function(productData) {
+
+            var productName = productData.variants.filter(function (item) {
+                return item.cid === data.cid
+            }).map(function (item) {
+                return item.name;
+            });
+
+            var addToBagTemplate = '<div class="atb popover" role="tooltip">' +
+                '<div class="arrow"></div>' +
+                '<h3 class="popover-header"></h3>' +
+                '<div class="popover-body"></div>' +
+                '</div>';
+
+            var addToBagContent = '<div class="text-header">ADDED</div>' +
+                '<div class="product-name">'+ productData.product.name + '<br>'+
+                '' + productName + '</div>' +
+                '<button class="view-bag">View Bag &#9654;</button></button></div>';
+
+            $('#cid-' + data.cid + ' .add-to-bag').popover({
+                title: productData.brand.name,
+                placement: 'left',
+                trigger: 'click',
+                html: true,
+                content: addToBagContent,
+                template: addToBagTemplate,
+                offset: '40px'
+            });
+
+            $('#cid-' + data.cid + ' .add-to-bag').html('Added!');
+            $('#cid-' + data.cid + ' .add-to-bag').popover('show');
         });
     }
 
 
 
+
     return {
-        getProduct:        _getProduct
+        getProduct:     _getProduct
     }
 })();
 
