@@ -3,8 +3,14 @@ $(document).ready(function() {
 
     store.getHeader();
     store.getFooter();
-});
 
+    // workaround for the popover not dismissing on mobile
+    $(document).click(function (e) {
+        if ($(e.target).parents('.popover').length)  {
+            $('.popover').popover('hide');
+        }
+    });
+});
 
 var product = (function() {
 
@@ -56,17 +62,20 @@ var product = (function() {
         });
     }
 
-
     function getPopover(data) {
         // attach popovers to button with json data
 
         $.getJSON('../data/data.json', function(productData) {
 
-            var productName = productData.variants.filter(function (item) {
-                return item.cid === data.cid
-            }).map(function (item) {
-                return item.name;
-            });
+            /*
+             // this was used to get the product data from the json file because the success response was incorrect
+             // as per email discussion with Sameer, using incorrect success response instead to populate the popover
+             var productName = productData.variants.filter(function (item) {
+             return item.cid === data.cid
+             }).map(function (item) {
+             return item.name;
+             });
+             */
 
             var addToBagTemplate = '<div class="atb popover" role="tooltip">' +
                 '<div class="arrow"></div>' +
@@ -76,13 +85,13 @@ var product = (function() {
 
             var addToBagContent = '<div class="text-header">ADDED</div>' +
                 '<div class="product-name">'+ productData.product.name + '<br>'+
-                '' + productName + '</div>' +
+                '' + data.name + '</div>' +
                 '<button class="view-bag">View Bag &#9654;</button></button></div>';
 
             $('#cid-' + data.cid + ' .add-to-bag').popover({
                 title: productData.brand.name,
                 placement: 'left',
-                trigger: 'click',
+                trigger: 'focus',
                 html: true,
                 content: addToBagContent,
                 template: addToBagTemplate,
@@ -94,18 +103,11 @@ var product = (function() {
         });
     }
 
-
-
-
     return {
         getProduct:     _getProduct
     }
 })();
 
-
-
-
-// TODO: put this in a separate JS file
 var store = (function() {
 
     function _getHeader() {

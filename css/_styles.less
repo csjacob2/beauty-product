@@ -8,10 +8,239 @@
 @primaryFont: "MarkWeb";
 @secondaryFont: "CanelaWeb";
 
+/* default */
+@media only screen
+and (min-width: 980px) {
+
+  body {
+    font-size: 16px;
+
+    .popover {
+      width: 250px;
+
+      .popover-header {
+        display: none;
+      }//popover-header
+
+      .popover-body {
+        .view-bag {
+          width: 100%;
+        }//view-bag
+      }//popover-body
+    }//popover
+
+    header {
+      .logo {
+        background: transparent url('../assets/logo_desktop_1x.png') no-repeat;
+        width: 200px;
+      } //logo
+
+      .brand-name {
+        font-size: 21px;
+      }//brand-name
+    }//header
+
+    .hero {
+      background: transparent url('../assets/hero_desktop_1x.jpg') no-repeat center;
+      height: 350px;
+
+      .product-headline {
+        font-size: 72px;
+        white-space: nowrap;
+        transform: translate(-50%, -50%);
+        top: 50%;
+        left: 50%;
+      }//product-headline
+    }//hero
+
+    main {
+      padding: 40px 80px 0 80px;
+
+      .brand-name {
+        font-size: 21px;
+      }//brand-name
+
+      .product-name {
+        font-size: 48px;
+      }//product-name
+
+      .product-desc {
+        width: 60%;
+      }//product-desc
+
+      .variants {
+        .variant {
+          flex-flow: row;
+
+          &:nth-child(2n+1) {
+            flex-direction: row-reverse;
+          }
+
+          .info-block {
+            width: 40%;
+            .name {
+              font-size: 24px;
+              .desc-s {
+                font-size: 21px;
+              }//variant-desc-s
+            }//variant-name
+          }//info-block
+
+          .image-block {
+            width: 60%;
+          }//image-block
+        }//variant
+      }//variants
+    }//main
+
+    footer {
+      padding: 0 80px 20px 80px;
+
+      .headline {
+        font-size: 48px;
+      }//headline
+
+      section {
+        display: table-cell;
+        width: 33%;
+        padding: 20px;
+
+        &:after {
+          content: '';
+          height: 80%;
+          width: 1px;
+          position: absolute;
+          right: 0;
+          top: 50%;
+          transform: translateY(-50%);
+          background-color: #fad3cc;
+        }
+
+        &:last-child:after {
+          width: 0;
+          background-color: transparent;
+        }
+      }//section
+    }//footer
+  }//body
+}//@media default
+
+/* devices */
+@media only screen
+and (max-width: 979px) {
+
+  body {
+    font-size: 15px;
+
+    .popover {
+      width: 300px;
+      max-width: 300px;
+
+      .arrow {
+        display: none;
+      }//arrow
+
+      .popover-header {
+        color: #fff;
+        background: #000 url('../assets/logo_mobile_1x.png') 10px 7px no-repeat;
+        border-radius: unset;
+        padding-left: 34px;
+        &:after {
+          //add the x on mobile
+          content: '\2716';
+          right: 5px;
+          top: 32px;
+          position: absolute;
+          color: #808080;
+          font-size: 30px;
+        }
+      }//popover-header
+
+      .popover-body {
+        .view-bag {
+          width: 50%;
+        }//view-bag
+      }//popover-body
+    }//popover
+
+    header {
+      .logo {
+        background: transparent url('../assets/logo_mobile_1x.png') no-repeat;
+        width: 40px;
+      } //logo
+
+      .brand-name {
+        font-size: 18px;
+      }//brand-name
+    }//header
+
+    .hero {
+      background: transparent url('../assets/hero_mobile_1x.jpg') no-repeat center;
+      height: 700px;
+
+      .product-headline {
+        font-size: 44px;
+        transform: translate(-50%, -50%);
+        top: 25%;
+        left: 50%;
+      }//product-headline
+    }//hero
+
+    main {
+      padding: 20px 20px 0 20px;
+
+      .brand-name {
+        font-size: 18px;
+      }//brand-name
+
+      .product-name {
+        line-height: 40px;
+        font-size: 30px;
+        .callout {
+          &::after {
+            content: '\A';  // force line break after the callout for two line title
+            white-space: pre;
+          }
+        }//callout
+      }//product-name
+
+      .variants {
+        .variant {
+          flex-flow: column-reverse;
+
+          .info-block {
+            .name {
+              font-size: 21px;
+              .desc-s {
+                font-size: 18px;
+              }//variant-desc-s
+            }//variant-name
+          }//info-block
+        }//variant
+      }//variants
+    }//main
+
+    footer {
+      padding: 0 20px 20px 20px;
+      display: flex;
+      flex-direction: column;
+
+      .headline {
+        font-size: 30px;
+        border-bottom: 1px solid #fad3cc;
+      }//headline
+
+      section {
+        padding: 20px 0;
+      }//section
+    }//footer
+  }//body
+}//@media devices
+
+
 body {
   font-family: @primaryFont;
   color: @fontColor_primary;
-  font-size: 16px;
   height: 100%;
   margin: 0;
 
@@ -46,19 +275,10 @@ body {
   .popover {
     font-size: 18px;
     z-index: 1;
-    width: 250px;
     border-radius: unset;
 
     .arrow {
     }//arrow
-
-    .popover-header {
-      display: none;
-      color: #fff;
-      background: #000 url('../assets/logo_mobile_1x.png') 10px 7px no-repeat;
-      border-radius: unset;
-      padding-left: 34px;
-    }//popover-header
 
     .popover-body {
       .text-header {
@@ -72,13 +292,12 @@ body {
       }//product-name
 
       .view-bag {
-        width: 100%;
       }//view-bag
     }//popover-body
   }//popover
 
   header {
-    height: 60px;
+    height: 40px;
     width: 100%;
     background-color: black;
     display: flex;
@@ -90,79 +309,62 @@ body {
     z-index: 10;
 
     .logo {
-      background: transparent url('../assets/logo_desktop_2x.png') no-repeat;
-      width: 350px;
-      height: -webkit-fill-available;
+      height: 30px;
       display: flex;
     }//logo
 
     .brand-name {
       color: #fff;
-      font-size: 1rem;
       text-transform: uppercase;
     }//brand-name
   }//header
 
   .hero {
-    background: transparent url('../assets/hero_desktop_1x.jpg') no-repeat center;
     background-size: cover;
-    height: -webkit-fill-available;
-    max-height: 350px;
     position: relative;
-    margin-top: 60px;
+    margin-top: 40px;
 
-    .product-name {
-      font-size: 72px;
+    .product-headline {
       color: @fontColor_secondary;
       font-family: @secondaryFont;
-      transform: translate(-50%, -50%);
-      top: 50%;
-      left: 50%;
       background-color: #f2f2f2;
-      white-space: nowrap;
       position: absolute;
       padding: 10px;
-    }//product-name
+      max-width: 90%;
+    }//product-headline
   }//hero
 
-
   main {
-    padding: 40px 80px 0 80px;
 
     .brand-name {
+      margin-bottom: 0;
     }//brand-name
 
     .product-name {
       font-family: @secondaryFont;
-      font-size: 30px;
     }//product-name
 
     .product-desc {
+      line-height: 20px;
     }//product-desc
 
     .variants {
       display: flex;
       flex-flow: column;
+      margin-left: -15px;     //aligns contents inside to header/footer (accommodates built in padding in div)
 
       .variant {
-        flex-flow: row;
         display: flex;
-
-        &:nth-child(2n+1) {
-          flex-direction: row-reverse;
-        }
+        padding-bottom: 40px;
 
         .info-block {
-          width: 40%;
           padding: 20px;
 
           .name {
-            font-size: 24px;
             font-weight: bold;
-            line-height: 18px;
+            line-height: 24px;
             .desc-s {
               color: #808080;
-              font-size: 16px;
             }//variant-desc-s
           }//variant-name
 
@@ -183,7 +385,6 @@ body {
         }//info-block
 
         .image-block {
-          width: 60%;
           padding: 20px;
 
           img {
@@ -196,34 +397,12 @@ body {
 
 
   footer {
-    padding: 0 80px 20px 80px;
-
     .headline {
-      font-size: 48px;
       font-family: @secondaryFont;
     }//headline
 
     section {
-      display: table-cell;
-      width: 33%;
       position: relative;
-      padding: 20px;
-
-      &:after {
-        content: '';
-        height: 80%;
-        width: 1px;
-        position: absolute;
-        right: 0;
-        top: 50%;
-        transform: translateY(-50%);
-        background-color: #fad3cc;
-      }
-
-      &:last-child:after {
-        width: 0;
-        background-color: transparent;
-      }
 
       h2 {
         font-size: 21px;
