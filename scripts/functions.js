@@ -71,9 +71,9 @@ var product = (function() {
              // this was used to get the product data from the json file because the success response was incorrect
              // as per email discussion with Sameer, using incorrect success response instead to populate the popover
              var productName = productData.variants.filter(function (item) {
-             return item.cid === data.cid
+                 return item.cid === data.cid
              }).map(function (item) {
-             return item.name;
+                 return item.name;
              });
              */
 
