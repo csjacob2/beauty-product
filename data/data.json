@@ -10,6 +10,12 @@
         "id": "33417",
         "cid": "ixaps",
         "id_string": "sun-designer-palette",
+        "callout_badge": "Limited Edition",
+        "headline": "Tropical Sunset Collection",
+        "hero_mobile_1x": "hero_mobile_1x.jpg",
+        "hero_mobile_2x": "hero_mobile_2x.jpg",
+        "hero_desktop_1x": "hero_desktop_1x.jpg",
+        "hero_desktop_2x": "hero_desktop_2x.jpg",
         "name": "Sun Designer Palette",
         "description": "Design a sun-kissed summer glow—no matter your skin tone—with skin-enhancing shades of blush, bronzer, and highlighter. Decadently silky with satin and matte finishes, these blendable powders make it easy to sculpt your contours, brighten your features, and create a healthy, natural tan. You may not be able to take a tropical vacation—but you can look like you did."
     },
@@ -42,7 +48,7 @@
     "general" : {
         "headline": "The Beautylish Guarantee",
         "subhead_1": "Fast & Free Shipping",
-        "copy_1": "Fast & Free Shipping",
+        "copy_1": "Orders over $35 ship for free in the U.S. For all other orders, we offer $5 flat rate shipping.",
         "subhead_2": "Satisfaction Guaranteed",
         "copy_2": "We want you to love what you order. With our money-back guarantee, you can return your order within 90 days for a full refund. We'll even cover the cost of return shipping.",
         "subhead_3": "World-Class Customer Care",
