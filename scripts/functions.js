@@ -44,7 +44,7 @@ var product = (function() {
         // get the cid of the product
         // (this could technically work for both products with and without variants)
         var cid = $(this).closest('[id]').data('productcid');
-        var url = 'https://www.beautylish.com/rest/interview-variant';
+        var url = '10.0.0.1';
 
         $.ajax({
             url: url,
