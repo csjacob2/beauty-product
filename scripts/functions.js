@@ -58,6 +58,8 @@ var product = (function() {
             //show popover if successful
             getPopover(data);
         }).fail(function(error){
+            // for testing purposes, faking success condition
+            getPopover(cid);
             console.log(error);
         });
     }
@@ -67,15 +69,23 @@ var product = (function() {
 
         $.getJSON('../data/data.json', function(productData) {
 
-            /*
-             // this was used to get the product data from the json file because the success response was incorrect
-             // as per email discussion with Sameer, using incorrect success response instead to populate the popover
-             var productName = productData.variants.filter(function (item) {
-                 return item.cid === data.cid
-             }).map(function (item) {
-                 return item.name;
-             });
-             */
+            // using this to get productData in error condition
+            //this is a workaround for a non-working URL/server in the ajax call
+            // this would not be used normally, remove this if/else block and getPopover in .fail condition for proper working condition
+            var productName, cid;
+            if (typeof data == 'string') {
+                //passed a string (cid) to get the data out of the json file
+
+                productName = productData.variants.filter(function(item) {
+                    return item.cid === data;
+                }).map(function(item) {
+                    return item.name;
+                });
+                cid = data;
+            } else {
+                productName = data.name;
+                cid = data.cid;
+            }
 
             var addToBagTemplate = '<div class="atb popover" role="tooltip">' +
                 '<div class="arrow"></div>' +
@@ -85,10 +95,10 @@ var product = (function() {
 
             var addToBagContent = '<div class="text-header">ADDED</div>' +
                 '<div class="product-name">'+ productData.product.name + '<br>'+
-                '' + data.name + '</div>' +
+                '' + productName + '</div>' +
                 '<button class="view-bag">View Bag &#9654;</button></button></div>';
 
-            $('#cid-' + data.cid + ' .add-to-bag').popover({
+            $('#cid-' + cid + ' .add-to-bag').popover({
                 title: productData.brand.name,
                 placement: 'left',
                 trigger: 'focus',
@@ -98,8 +108,8 @@ var product = (function() {
                 offset: '40px'
             });
 
-            $('#cid-' + data.cid + ' .add-to-bag').html('Added!');
-            $('#cid-' + data.cid + ' .add-to-bag').popover('show');
+            $('#cid-' + cid + ' .add-to-bag').html('Added!');
+            $('#cid-' + cid + ' .add-to-bag').popover('show');
         });
     }
 
