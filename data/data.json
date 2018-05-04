@@ -12,10 +12,8 @@
         "id_string": "sun-designer-palette",
         "callout_badge": "Limited Edition",
         "headline": "Tropical Sunset Collection",
-        "hero_mobile_1x": "hero_mobile_1x.jpg",
-        "hero_mobile_2x": "hero_mobile_2x.jpg",
-        "hero_desktop_1x": "hero_desktop_1x.jpg",
-        "hero_desktop_2x": "hero_desktop_2x.jpg",
+        "hero_mobile": "hero_mobile.jpg",
+        "hero_desktop": "hero_desktop.jpg",
         "name": "Sun Designer Palette",
         "description": "Design a sun-kissed summer glow—no matter your skin tone—with skin-enhancing shades of blush, bronzer, and highlighter. Decadently silky with satin and matte finishes, these blendable powders make it easy to sculpt your contours, brighten your features, and create a healthy, natural tan. You may not be able to take a tropical vacation—but you can look like you did."
     },
@@ -24,7 +22,7 @@
         {"id": "51788",
          "cid": "gpsuq",
          "id_string": "tropical-sunset",
-         "image": "../assets/tropical_sunset_1x.jpg",
+         "image": "../assets/tropical_sunset.jpg",
          "name": "3 - Tropical Sunset ",
          "callout_badge": "Limited Edition",
          "short_description": "Rich, warm hues for a sultry golden glow.",
@@ -35,7 +33,7 @@
         {"id": "54895",
          "cid": "gzqvg",
          "id_string": "savannah-love",
-         "image": "../assets/savannah_love_1x.jpg",
+         "image": "../assets/savannah_love.jpg",
          "name": "4 - Savannah Love",
          "callout_badge": "Limited Edition",
          "short_description": "Luminous pinks, peaches, and a deep, bronzy brown.",
@@ -46,7 +44,7 @@
     ],
 
     "general" : {
-        "headline": "The Beautylish Guarantee",
+        "headline": "The Beauty Guarantee",
         "subhead_1": "Fast & Free Shipping",
         "copy_1": "Orders over $35 ship for free in the U.S. For all other orders, we offer $5 flat rate shipping.",
         "subhead_2": "Satisfaction Guaranteed",
@@ -61,8 +59,8 @@
          "msg": "1-877-992-5474"
         },
         {"label": "Email:",
-         "href": "mailto:service@beautylish.com",
-         "msg": "service@beautylish.com"
+         "href": "mailto:service@dev.null.com",
+         "msg": "service@dev.null.com"
         }
     ]
 }
