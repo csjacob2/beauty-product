@@ -1,93 +1,198 @@
 * {
   box-sizing: border-box;
 }
-/* default */
-@media only screen and (min-width: 980px) {
-  body {
-    font-size: 16px;
-  }
-  body .popover {
-    width: 250px;
-  }
-  body .popover .popover-header {
-    display: none;
-  }
-  body .popover .popover-body .view-bag {
-    width: 100%;
-  }
-  body header .logo {
-    background: transparent url('../assets/logo_desktop_1x.png') no-repeat;
-    width: 200px;
-  }
-  body header .brand-name {
-    font-size: 21px;
-  }
-  body .hero {
-    background: transparent url('../assets/hero_desktop_1x.jpg') no-repeat center;
-    height: 350px;
-  }
-  body .hero .product-headline {
-    font-size: 72px;
-    white-space: nowrap;
-    transform: translate(-50%, -50%);
-    top: 50%;
-    left: 50%;
-  }
-  body main {
-    padding: 40px 80px 0 80px;
-  }
-  body main .brand-name {
-    font-size: 21px;
-  }
-  body main .product-name {
-    font-size: 48px;
-  }
-  body main .product-desc {
-    width: 60%;
-  }
-  body main .variants .variant {
-    flex-flow: row;
-  }
-  body main .variants .variant:nth-child(2n+1) {
-    flex-direction: row-reverse;
-  }
-  body main .variants .variant .info-block {
-    width: 40%;
-  }
-  body main .variants .variant .info-block .name {
-    font-size: 24px;
-  }
-  body main .variants .variant .info-block .name .desc-s {
-    font-size: 21px;
-  }
-  body main .variants .variant .image-block {
-    width: 60%;
-  }
-  body footer {
-    padding: 0 80px 20px 80px;
-  }
-  body footer .headline {
-    font-size: 48px;
-  }
-  body footer section {
-    display: table-cell;
-    width: 33%;
-    padding: 20px;
-  }
-  body footer section:after {
-    content: '';
-    height: 80%;
-    width: 1px;
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: #fad3cc;
-  }
-  body footer section:last-child:after {
-    width: 0;
-    background-color: transparent;
-  }
+body {
+  font-family: "MarkWeb";
+  color: #000;
+  height: 100%;
+  margin: 0;
+  font-size: 16px;
+}
+body a {
+  color: #808080;
+}
+body a:hover,
+body a:active {
+  color: #dcddde;
+  text-decoration: none;
+}
+body button {
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #000;
+  padding: 5px 10px;
+  border: 1px solid transparent;
+  box-shadow: none !important;
+  outline: none !important;
+}
+body button:hover,
+body button:active {
+  color: #000;
+  background-color: #fff;
+  border: 1px solid #000;
+  box-shadow: none !important;
+  outline: none !important;
+}
+body .popover {
+  font-size: 18px;
+  z-index: 1;
+  border-radius: unset;
+  width: 250px;
+}
+body .popover .popover-header {
+  display: none;
+}
+body .popover .popover-body .text-header {
+  color: #808080;
+  padding: 0 0 10px 0;
+}
+body .popover .popover-body .product-name {
+  padding: 0 0 10px 0;
+  font-weight: bold;
+}
+body .popover .popover-body .view-bag {
+  width: 100%;
+}
+body header {
+  height: 40px;
+  width: 100%;
+  background-color: black;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 10px 0 0 10px;
+  position: fixed;
+  top: 0;
+  z-index: 10;
+}
+body header .logo {
+  background: transparent url('../assets/logo_desktop.png') no-repeat;
+  width: 200px;
+  height: 30px;
+  display: flex;
+}
+body header .brand-name {
+  font-size: 21px;
+  color: #fff;
+  text-transform: uppercase;
+}
+body .hero {
+  background: transparent url('../assets/hero_desktop.jpg') no-repeat center;
+  background-size: cover;
+  position: relative;
+  margin-top: 40px;
+  height: 350px;
+}
+body .hero .product-headline {
+  color: #f0725d;
+  font-family: "CanelaWeb";
+  background-color: #f2f2f2;
+  position: absolute;
+  padding: 10px;
+  max-width: 90%;
+  font-size: 72px;
+  white-space: nowrap;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+}
+body main {
+  padding: 40px 80px 0 80px;
+}
+body main .brand-name {
+  font-size: 21px;
+  margin-bottom: 0;
+}
+body main .product-name {
+  font-family: "CanelaWeb";
+  font-size: 48px;
+}
+body main .product-desc {
+  width: 60%;
+  line-height: 20px;
+}
+body main .variants {
+  display: flex;
+  flex-flow: column;
+  margin-left: -15px;
+}
+body main .variants .variant {
+  display: flex;
+  padding-bottom: 40px;
+  flex-flow: row;
+}
+body main .variants .variant:nth-child(2n+1) {
+  flex-direction: row-reverse;
+}
+body main .variants .variant .info-block {
+  width: 40%;
+  padding: 20px;
+}
+body main .variants .variant .info-block .name {
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 24px;
+}
+body main .variants .variant .info-block .name .desc-s {
+  font-size: 21px;
+  color: #808080;
+}
+body main .variants .variant .info-block .desc {
+  line-height: 20px;
+}
+body main .variants .variant .info-block .price {
+  font-weight: bold;
+}
+body main .variants .variant .info-block .add-to-bag {
+  width: 200px;
+}
+body main .variants .variant .image-block {
+  padding: 20px;
+  width: 60%;
+}
+body main .variants .variant .image-block img {
+  width: 100%;
+}
+body footer {
+  padding: 0 80px 20px 80px;
+}
+body footer .headline {
+  font-size: 48px;
+  font-family: "CanelaWeb";
+}
+body footer section {
+  display: table-cell;
+  width: 33%;
+  padding: 20px;
+  position: relative;
+}
+body footer section:after {
+  content: '';
+  height: 80%;
+  width: 1px;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #fad3cc;
+}
+body footer section:last-child:after {
+  width: 0;
+  background-color: transparent;
+}
+body footer section h2 {
+  font-size: 21px;
+  font-weight: bold;
+}
+body footer section .contact {
+  padding-top: 20px;
+}
+body footer section .contact span {
+  display: block;
+}
+body footer section .contact span.label {
+  display: inline;
 }
 /* devices */
 @media only screen and (max-width: 979px) {
@@ -103,7 +208,7 @@
   }
   body .popover .popover-header {
     color: #fff;
-    background: #000 url('../assets/logo_mobile_1x.png') 10px 7px no-repeat;
+    background: #000 url('../assets/logo_mobile.png') 10px 7px no-repeat;
     border-radius: unset;
     padding-left: 34px;
   }
@@ -119,14 +224,14 @@
     width: 50%;
   }
   body header .logo {
-    background: transparent url('../assets/logo_mobile_1x.png') no-repeat;
+    background: transparent url('../assets/logo_mobile.png') no-repeat;
     width: 40px;
   }
   body header .brand-name {
     font-size: 18px;
   }
   body .hero {
-    background: transparent url('../assets/hero_mobile_1x.jpg') no-repeat center;
+    background: transparent url('../assets/hero_mobile.jpg') no-repeat center;
     height: 700px;
   }
   body .hero .product-headline {
@@ -170,146 +275,6 @@
   body footer section {
     padding: 20px 0;
   }
-}
-body {
-  font-family: "MarkWeb";
-  color: #000;
-  height: 100%;
-  margin: 0;
-}
-body a {
-  color: #808080;
-}
-body a:hover,
-body a:active {
-  color: #dcddde;
-  text-decoration: none;
-}
-body button {
-  font-size: 18px;
-  font-weight: bold;
-  color: #fff;
-  background-color: #000;
-  padding: 5px 10px;
-  border: 1px solid transparent;
-  box-shadow: none !important;
-  outline: none !important;
-}
-body button:hover,
-body button:active {
-  color: #000;
-  background-color: #fff;
-  border: 1px solid #000;
-  box-shadow: none !important;
-  outline: none !important;
-}
-body .popover {
-  font-size: 18px;
-  z-index: 1;
-  border-radius: unset;
-}
-body .popover .popover-body .text-header {
-  color: #808080;
-  padding: 0 0 10px 0;
-}
-body .popover .popover-body .product-name {
-  padding: 0 0 10px 0;
-  font-weight: bold;
-}
-body header {
-  height: 40px;
-  width: 100%;
-  background-color: black;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  padding: 10px 0 0 10px;
-  position: fixed;
-  top: 0;
-  z-index: 10;
-}
-body header .logo {
-  height: 30px;
-  display: flex;
-}
-body header .brand-name {
-  color: #fff;
-  text-transform: uppercase;
-}
-body .hero {
-  background-size: cover;
-  position: relative;
-  margin-top: 40px;
-}
-body .hero .product-headline {
-  color: #f0725d;
-  font-family: "CanelaWeb";
-  background-color: #f2f2f2;
-  position: absolute;
-  padding: 10px;
-  max-width: 90%;
-}
-body main .brand-name {
-  margin-bottom: 0;
-}
-body main .product-name {
-  font-family: "CanelaWeb";
-}
-body main .product-desc {
-  line-height: 20px;
-}
-body main .variants {
-  display: flex;
-  flex-flow: column;
-  margin-left: -15px;
-}
-body main .variants .variant {
-  display: flex;
-  padding-bottom: 40px;
-}
-body main .variants .variant .info-block {
-  padding: 20px;
-}
-body main .variants .variant .info-block .name {
-  font-weight: bold;
-  line-height: 24px;
-}
-body main .variants .variant .info-block .name .desc-s {
-  color: #808080;
-}
-body main .variants .variant .info-block .desc {
-  line-height: 20px;
-}
-body main .variants .variant .info-block .price {
-  font-weight: bold;
-}
-body main .variants .variant .info-block .add-to-bag {
-  width: 200px;
-}
-body main .variants .variant .image-block {
-  padding: 20px;
-}
-body main .variants .variant .image-block img {
-  width: 100%;
-}
-body footer .headline {
-  font-family: "CanelaWeb";
-}
-body footer section {
-  position: relative;
-}
-body footer section h2 {
-  font-size: 21px;
-  font-weight: bold;
-}
-body footer section .contact {
-  padding-top: 20px;
-}
-body footer section .contact span {
-  display: block;
-}
-body footer section .contact span.label {
-  display: inline;
 }
 /* Sans-Serif Regular */
 @font-face {

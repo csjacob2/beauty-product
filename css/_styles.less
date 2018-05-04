@@ -8,122 +8,243 @@
 @primaryFont: "MarkWeb";
 @secondaryFont: "CanelaWeb";
 
-/* default */
-@media only screen
-and (min-width: 980px) {
 
-  body {
-    font-size: 16px;
+body {
+  font-family: @primaryFont;
+  color: @fontColor_primary;
+  height: 100%;
+  margin: 0;
+  font-size: 16px;
 
-    .popover {
-      width: 250px;
+  a {
+    color: #808080;
+    &:hover,
+    &:active {
+      color: #dcddde;
+      text-decoration: none;
+    }
+  }
 
-      .popover-header {
-        display: none;
-      }//popover-header
+  button {
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #000;
+    padding: 5px 10px;
+    border: 1px solid transparent;
+    box-shadow: none !important;
+    outline: none !important;
+    &:hover,
+    &:active {
+      color: @fontColor_primary;
+      background-color: #fff;
+      border: 1px solid #000;
+      box-shadow: none !important;
+      outline: none !important;
+    }
+  }//button
 
-      .popover-body {
-        .view-bag {
-          width: 100%;
-        }//view-bag
-      }//popover-body
-    }//popover
+  .popover {
+    font-size: 18px;
+    z-index: 1;
+    border-radius: unset;
+    width: 250px;
 
-    header {
-      .logo {
-        background: transparent url('../assets/logo_desktop_1x.png') no-repeat;
-        width: 200px;
-      } //logo
+    .arrow {
+    }//arrow
 
-      .brand-name {
-        font-size: 21px;
-      }//brand-name
-    }//header
+    .popover-header {
+      display: none;
+    }//popover-header
 
-    .hero {
-      background: transparent url('../assets/hero_desktop_1x.jpg') no-repeat center;
-      height: 350px;
-
-      .product-headline {
-        font-size: 72px;
-        white-space: nowrap;
-        transform: translate(-50%, -50%);
-        top: 50%;
-        left: 50%;
-      }//product-headline
-    }//hero
-
-    main {
-      padding: 40px 80px 0 80px;
-
-      .brand-name {
-        font-size: 21px;
-      }//brand-name
+    .popover-body {
+      .text-header {
+        color: #808080;
+        padding: 0 0 10px 0;
+      }//text-header
 
       .product-name {
-        font-size: 48px;
+        padding: 0 0 10px 0;
+        font-weight: bold;
       }//product-name
 
-      .product-desc {
-        width: 60%;
-      }//product-desc
+      .view-bag {
+        width: 100%;
+      }//view-bag
+    }//popover-body
+  }//popover
 
-      .variants {
-        .variant {
-          flex-flow: row;
+  header {
+    height: 40px;
+    width: 100%;
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px 0 0 10px;
+    position: fixed;
+    top: 0;
+    z-index: 10;
 
-          &:nth-child(2n+1) {
-            flex-direction: row-reverse;
+    .logo {
+      background: transparent url('../assets/logo_desktop.png') no-repeat;
+      width: 200px;
+      height: 30px;
+      display: flex;
+    }//logo
+
+    .brand-name {
+      font-size: 21px;
+      color: #fff;
+      text-transform: uppercase;
+    }//brand-name
+  }//header
+
+  .hero {
+    background: transparent url('../assets/hero_desktop.jpg') no-repeat center;
+    background-size: cover;
+    position: relative;
+    margin-top: 40px;
+    height: 350px;
+
+    .product-headline {
+      color: @fontColor_secondary;
+      font-family: @secondaryFont;
+      background-color: #f2f2f2;
+      position: absolute;
+      padding: 10px;
+      max-width: 90%;
+      font-size: 72px;
+      white-space: nowrap;
+      transform: translate(-50%, -50%);
+      top: 50%;
+      left: 50%;
+    }//product-headline
+  }//hero
+
+  main {
+    padding: 40px 80px 0 80px;
+
+    .brand-name {
+      font-size: 21px;
+      margin-bottom: 0;
+    }//brand-name
+
+    .product-name {
+      font-family: @secondaryFont;
+      font-size: 48px;
+    }//product-name
+
+    .product-desc {
+      width: 60%;
+      line-height: 20px;
+    }//product-desc
+
+    .variants {
+      display: flex;
+      flex-flow: column;
+      margin-left: -15px;     //aligns contents inside to header/footer (accommodates built in padding in div)
+
+      .variant {
+        display: flex;
+        padding-bottom: 40px;
+        flex-flow: row;
+
+        &:nth-child(2n+1) {
+          flex-direction: row-reverse;
+        }
+
+        .info-block {
+          width: 40%;
+          padding: 20px;
+
+          .name {
+            font-size: 24px;
+            font-weight: bold;
+            line-height: 24px;
+            .desc-s {
+              font-size: 21px;
+              color: #808080;
+            }//variant-desc-s
+          }//variant-name
+
+          .desc {
+            line-height: 20px;
+          }//variant-desc
+
+          .size {
+          }//variant-size
+
+          .price {
+            font-weight: bold;
+          }//variant-price
+
+          .add-to-bag {
+            width: 200px;
+          }//add-to-bag
+        }//info-block
+
+        .image-block {
+          padding: 20px;
+          width: 60%;
+
+          img {
+            width: 100%;
           }
+        }//image-block
+      }//variant
+    }//variants
+  }//main
 
-          .info-block {
-            width: 40%;
-            .name {
-              font-size: 24px;
-              .desc-s {
-                font-size: 21px;
-              }//variant-desc-s
-            }//variant-name
-          }//info-block
 
-          .image-block {
-            width: 60%;
-          }//image-block
-        }//variant
-      }//variants
-    }//main
+  footer {
+    padding: 0 80px 20px 80px;
 
-    footer {
-      padding: 0 80px 20px 80px;
+    .headline {
+      font-size: 48px;
+      font-family: @secondaryFont;
+    }//headline
 
-      .headline {
-        font-size: 48px;
-      }//headline
+    section {
+      display: table-cell;
+      width: 33%;
+      padding: 20px;
+      position: relative;
 
-      section {
-        display: table-cell;
-        width: 33%;
-        padding: 20px;
+      &:after {
+        content: '';
+        height: 80%;
+        width: 1px;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: #fad3cc;
+      }
 
-        &:after {
-          content: '';
-          height: 80%;
-          width: 1px;
-          position: absolute;
-          right: 0;
-          top: 50%;
-          transform: translateY(-50%);
-          background-color: #fad3cc;
-        }
+      &:last-child:after {
+        width: 0;
+        background-color: transparent;
+      }
 
-        &:last-child:after {
-          width: 0;
-          background-color: transparent;
-        }
-      }//section
-    }//footer
-  }//body
-}//@media default
+      h2 {
+        font-size: 21px;
+        font-weight: bold;
+      }//h2
+
+      .contact {
+        padding-top: 20px;
+        span {
+          display: block;
+          &.label {
+            display: inline;
+          }//label
+        }//span
+      }//contact
+    }//section
+  }//footer
+}//body
+
 
 /* devices */
 @media only screen
@@ -142,7 +263,7 @@ and (max-width: 979px) {
 
       .popover-header {
         color: #fff;
-        background: #000 url('../assets/logo_mobile_1x.png') 10px 7px no-repeat;
+        background: #000 url('../assets/logo_mobile.png') 10px 7px no-repeat;
         border-radius: unset;
         padding-left: 34px;
         &:after {
@@ -165,7 +286,7 @@ and (max-width: 979px) {
 
     header {
       .logo {
-        background: transparent url('../assets/logo_mobile_1x.png') no-repeat;
+        background: transparent url('../assets/logo_mobile.png') no-repeat;
         width: 40px;
       } //logo
 
@@ -175,7 +296,7 @@ and (max-width: 979px) {
     }//header
 
     .hero {
-      background: transparent url('../assets/hero_mobile_1x.jpg') no-repeat center;
+      background: transparent url('../assets/hero_mobile.jpg') no-repeat center;
       height: 700px;
 
       .product-headline {
@@ -236,188 +357,3 @@ and (max-width: 979px) {
     }//footer
   }//body
 }//@media devices
-
-
-body {
-  font-family: @primaryFont;
-  color: @fontColor_primary;
-  height: 100%;
-  margin: 0;
-
-  a {
-    color: #808080;
-    &:hover,
-    &:active {
-      color: #dcddde;
-      text-decoration: none;
-    }
-  }
-
-  button {
-    font-size: 18px;
-    font-weight: bold;
-    color: #fff;
-    background-color: #000;
-    padding: 5px 10px;
-    border: 1px solid transparent;
-    box-shadow: none !important;
-    outline: none !important;
-    &:hover,
-    &:active {
-      color: @fontColor_primary;
-      background-color: #fff;
-      border: 1px solid #000;
-      box-shadow: none !important;
-      outline: none !important;
-    }
-  }//button
-
-  .popover {
-    font-size: 18px;
-    z-index: 1;
-    border-radius: unset;
-
-    .arrow {
-    }//arrow
-
-    .popover-body {
-      .text-header {
-        color: #808080;
-        padding: 0 0 10px 0;
-      }//text-header
-
-      .product-name {
-        padding: 0 0 10px 0;
-        font-weight: bold;
-      }//product-name
-
-      .view-bag {
-      }//view-bag
-    }//popover-body
-  }//popover
-
-  header {
-    height: 40px;
-    width: 100%;
-    background-color: black;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 10px 0 0 10px;
-    position: fixed;
-    top: 0;
-    z-index: 10;
-
-    .logo {
-      height: 30px;
-      display: flex;
-    }//logo
-
-    .brand-name {
-      color: #fff;
-      text-transform: uppercase;
-    }//brand-name
-  }//header
-
-  .hero {
-    background-size: cover;
-    position: relative;
-    margin-top: 40px;
-
-    .product-headline {
-      color: @fontColor_secondary;
-      font-family: @secondaryFont;
-      background-color: #f2f2f2;
-      position: absolute;
-      padding: 10px;
-      max-width: 90%;
-    }//product-headline
-  }//hero
-
-  main {
-
-    .brand-name {
-      margin-bottom: 0;
-    }//brand-name
-
-    .product-name {
-      font-family: @secondaryFont;
-    }//product-name
-
-    .product-desc {
-      line-height: 20px;
-    }//product-desc
-
-    .variants {
-      display: flex;
-      flex-flow: column;
-      margin-left: -15px;     //aligns contents inside to header/footer (accommodates built in padding in div)
-
-      .variant {
-        display: flex;
-        padding-bottom: 40px;
-
-        .info-block {
-          padding: 20px;
-
-          .name {
-            font-weight: bold;
-            line-height: 24px;
-            .desc-s {
-              color: #808080;
-            }//variant-desc-s
-          }//variant-name
-
-          .desc {
-            line-height: 20px;
-          }//variant-desc
-
-          .size {
-          }//variant-size
-
-          .price {
-            font-weight: bold;
-          }//variant-price
-
-          .add-to-bag {
-            width: 200px;
-          }//add-to-bag
-        }//info-block
-
-        .image-block {
-          padding: 20px;
-
-          img {
-            width: 100%;
-          }
-        }//image-block
-      }//variant
-    }//variants
-  }//main
-
-
-  footer {
-    .headline {
-      font-family: @secondaryFont;
-    }//headline
-
-    section {
-      position: relative;
-
-      h2 {
-        font-size: 21px;
-        font-weight: bold;
-      }//h2
-
-      .contact {
-        padding-top: 20px;
-        span {
-          display: block;
-          &.label {
-            display: inline;
-          }//label
-        }//span
-      }//contact
-    }//section
-  }//footer
-}//body
