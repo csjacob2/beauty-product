@@ -8,13 +8,12 @@
 @primaryFont: "MarkWeb";
 @secondaryFont: "CanelaWeb";
 
-
 body {
+  font-size: 16px;
   font-family: @primaryFont;
   color: @fontColor_primary;
   height: 100%;
   margin: 0;
-  font-size: 16px;
 
   a {
     color: #808080;
@@ -94,18 +93,18 @@ body {
     }//logo
 
     .brand-name {
-      font-size: 21px;
       color: #fff;
       text-transform: uppercase;
+      font-size: 21px;
     }//brand-name
   }//header
 
   .hero {
     background: transparent url('../assets/hero_desktop.jpg') no-repeat center;
+    height: 350px;
     background-size: cover;
     position: relative;
     margin-top: 40px;
-    height: 350px;
 
     .product-headline {
       color: @fontColor_secondary;
@@ -155,16 +154,16 @@ body {
         }
 
         .info-block {
-          width: 40%;
           padding: 20px;
+          width: 40%;
 
           .name {
-            font-size: 24px;
             font-weight: bold;
             line-height: 24px;
+            font-size: 24px;
             .desc-s {
-              font-size: 21px;
               color: #808080;
+              font-size: 21px;
             }//variant-desc-s
           }//variant-name
 
@@ -187,7 +186,6 @@ body {
         .image-block {
           padding: 20px;
           width: 60%;
-
           img {
             width: 100%;
           }
@@ -327,8 +325,6 @@ and (max-width: 979px) {
 
       .variants {
         .variant {
-          flex-flow: column-reverse;
-
           .info-block {
             .name {
               font-size: 21px;
@@ -353,6 +349,11 @@ and (max-width: 979px) {
 
       section {
         padding: 20px 0;
+        width: 100%;
+
+        &:after {
+          content: none;
+        }
       }//section
     }//footer
   }//body

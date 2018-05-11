@@ -2,11 +2,11 @@
   box-sizing: border-box;
 }
 body {
+  font-size: 16px;
   font-family: "MarkWeb";
   color: #000;
   height: 100%;
   margin: 0;
-  font-size: 16px;
 }
 body a {
   color: #808080;
@@ -73,16 +73,16 @@ body header .logo {
   display: flex;
 }
 body header .brand-name {
-  font-size: 21px;
   color: #fff;
   text-transform: uppercase;
+  font-size: 21px;
 }
 body .hero {
   background: transparent url('../assets/hero_desktop.jpg') no-repeat center;
+  height: 350px;
   background-size: cover;
   position: relative;
   margin-top: 40px;
-  height: 350px;
 }
 body .hero .product-headline {
   color: #f0725d;
@@ -126,17 +126,17 @@ body main .variants .variant:nth-child(2n+1) {
   flex-direction: row-reverse;
 }
 body main .variants .variant .info-block {
-  width: 40%;
   padding: 20px;
+  width: 40%;
 }
 body main .variants .variant .info-block .name {
-  font-size: 24px;
   font-weight: bold;
   line-height: 24px;
+  font-size: 24px;
 }
 body main .variants .variant .info-block .name .desc-s {
-  font-size: 21px;
   color: #808080;
+  font-size: 21px;
 }
 body main .variants .variant .info-block .desc {
   line-height: 20px;
@@ -254,9 +254,6 @@ body footer section .contact span.label {
     content: '\A';
     white-space: pre;
   }
-  body main .variants .variant {
-    flex-flow: column-reverse;
-  }
   body main .variants .variant .info-block .name {
     font-size: 21px;
   }
@@ -274,6 +271,10 @@ body footer section .contact span.label {
   }
   body footer section {
     padding: 20px 0;
+    width: 100%;
+  }
+  body footer section:after {
+    content: none;
   }
 }
 /* Sans-Serif Regular */
